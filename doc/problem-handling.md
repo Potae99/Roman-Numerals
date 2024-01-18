@@ -15,7 +15,7 @@
 ### raise exception
 ##### exception choice
 1. Standard exception: (ValueError)
-2. (*)Extension of standard exception:
+2. Extension of standard exception:
     NumberOutOfRange : ValueError
 3. Project-specific exception:
     NumberOutOfRange : Exception

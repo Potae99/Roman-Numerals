@@ -1,54 +1,46 @@
-"""Test cases for Roman numerals."""
+"""Tast case for Roman numerals"""
 
-# Standard library
+#  Standard library
 
-
-# 3rd Part library
+#  3rd Part library
 import pytest
 
-#Project library
-
+#  Project library
 from numeral.roman import to_roman
 
-
-#----------------------------------------------
-
+#------------------------------------------------------------------
 def test_calling_function():
-    """Call a roman numeral function."""
+        """Call a roman numeral function."""
 
+#------------------------------------------------------------------
+@pytest.mark.paramitrize(
+        "arabic_num, roman_num"
+        [
+                #Base case
+                (1, "I"),
+                (5, "V"),
+                (10, "X"),
+                (50, "L"),
+                (100, "C"),
+                (500, "D"),
+                (1000, "M"),
 
-#------------------------------------------------------
-@pytest.mark.parametrize(
-    "arabic_num, roman_num",
-    [
-        # Base case
-        (1, "I"),
-        (5, "V"),
-        (10, "X")
-        (50, "L"),
-        (100, "C"),
-        (500, "D"),
-        (1000, "M"),
+                # Additive case
+                (2, "II"),
+                (3, "III"),
+                (6, "VI"),
 
-        # Additive case
-        (2, "II"),
-        (3, "III"),
-        (6, "VI"),
-
-        # Subtraction case
-        (4,"IV"),
-        (9,"IX"),
-    ]
+                #  Subtraction case
+                (4, "IV"),
+                (9, "IX"),
+        ]
 )
-def test_to_roman(arabic_num, roman_num):
-    """Convert Hindo-Arabic number to Roman number."""
-    #Arrange
+def test_to_roman(arbic_num, roman_num):
+        """Convert Hindo-Arbic number to Roman number."""
+        #Arrange
 
+        #Act
+        result = to_roman(arbic_num)
 
-    #Act
-
-    result = to_roman(arabic_num)
-
-
-    #Assret
-    assert result == roman_num
+        #Assert
+        assert result == roman_num
